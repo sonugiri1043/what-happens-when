@@ -17,6 +17,30 @@ Table of Contents
    :backlinks: none
    :local:
 
+Browser
+-------
+
+The browser's functionality is to present the web resource you choose, by
+requesting it from the server and displaying it in the browser window.
+The resource is usually an HTML document, but may also be a PDF,
+image, or some other type of content. The location of the resource is
+specified by the user using a URI (Uniform Resource Identifier).
+
+The way the browser interprets and displays HTML files is specified
+in the HTML and CSS specifications. These specifications are maintained
+by the W3C (World Wide Web Consortium) organization, which is the
+standards organization for the web.
+
+Browser user interfaces have a lot in common with each other. Among the
+common user interface elements are:
+
+* An address bar for inserting a URI
+* Back and forward buttons
+* Bookmarking options
+* Refresh and stop buttons for refreshing or stopping the loading of
+  current documents
+* Home button that takes you to your home page
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
@@ -236,12 +260,7 @@ TLS handshake
 HTTP protocol
 -------------
 
-If the web browser used was written by Google, instead of sending an HTTP
-request to retrieve the page, it will send a request to try and negotiate with
-the server an "upgrade" from HTTP to the SPDY protocol.
-
-If the client is using the HTTP protocol and does not support SPDY, it sends a
-request to the server of the form::
+Client sends an HTTP request to the server of the form::
 
     GET / HTTP/1.1
     Host: google.com
@@ -250,10 +269,7 @@ request to the server of the form::
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
 formatted as per the HTTP specification and separated by single new lines.
-(This assumes the web browser being used doesn't have any bugs violating the
-HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
-otherwise it may not include the ``Host`` header in the request and the version
-specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
+(Assumes that the web browser is using ``HTTP/1.1``)
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
@@ -339,29 +355,6 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
-Browser
--------
-
-The browser's functionality is to present the web resource you choose, by
-requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
-
-The way the browser interprets and displays HTML files is specified
-in the HTML and CSS specifications. These specifications are maintained
-by the W3C (World Wide Web Consortium) organization, which is the
-standards organization for the web.
-
-Browser user interfaces have a lot in common with each other. Among the
-common user interface elements are:
-
-* An address bar for inserting a URI
-* Back and forward buttons
-* Bookmarking options
-* Refresh and stop buttons for refreshing or stopping the loading of
-  current documents
-* Home button that takes you to your home page
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
